@@ -67,9 +67,9 @@ userSchema.methods.generateAccessToken = function(){
             email: this.email,
             username: this.username
         },
-        process.env.ACCESS_TOKEN_SECRET,
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMj",
         {
-            expiresIn: process.env.ACCESS_TOKEN_EXPIRY
+            expiresIn: '1d'
         }
     )
 }
@@ -78,9 +78,9 @@ userSchema.methods.generateRefreshToken = function(){
         {
             _id: this._id,
         },
-        process.env.REFRESH_TOKEN_SECRET,
+        "JJNDajshdjakwudakmnzkKKASDK.jaxcnjehakdP,masclmxclkeklkfnrf0845ksj",
         {
-            expiresIn: process.env.REFRESH_TOKEN_EXPIRY
+            expiresIn: '10d'
         }
     )
 }
