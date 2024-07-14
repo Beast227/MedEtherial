@@ -13,7 +13,7 @@ const Schedules = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100" style={{ backgroundImage: "url('https://i.pinimg.com/564x/09/22/ee/0922eed0b8cc4d35753d28c677c7eded.jpg')" }}>
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Schedule an Appointment</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -29,9 +29,12 @@ const Schedules = () => {
               required
             >
               <option value="" disabled>Select a doctor</option>
-              <option value="dr_smith">Dr. Smith</option>
-              <option value="dr_jones">Dr. Jones</option>
-              <option value="dr_brown">Dr. Brown</option>
+              <option value="dr_smith">Dr. John Doe</option>
+              <option value="dr_jones">Dr. Melisha Smith</option>
+              <option value="dr_brown">Dr. Michael Johnson</option>
+              <option value="dr_brown">Dr. Emily Brown</option>
+              <option value="dr_brown">Dr. William lee</option>
+              <option value="dr_brown">Dr. Sarah Johnson</option>
             </select>
           </div>
 

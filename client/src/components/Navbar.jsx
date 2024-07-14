@@ -21,11 +21,13 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
         </div>
       </div>
       <div className="flex flex-1 justify-center">
+
         <div className="flex">
           <Link to="/" className="text-white text-xl hover:text-gray-300 hover:text-2xl transition-all duration-200 border-r border-gray-500 px-4">Home</Link>
           <Link to="/schedules" className="text-white text-xl hover:text-gray-300 hover:text-2xl transition-all duration-200 border-r border-gray-500 px-4">Schedules</Link>
           <Link to="/doctor-appointment" className="text-white text-xl hover:text-gray-300 hover:text-2xl transition-all duration-200 border-r border-gray-500 px-4">Doctor Appointment</Link>
           <Link to="/hospital-connection" className="text-white text-xl hover:text-gray-300 hover:text-2xl transition-all duration-200 px-4">Hospital Connection</Link>
+
         </div>
       </div>
       <div>
