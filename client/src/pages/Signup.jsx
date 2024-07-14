@@ -30,6 +30,8 @@ const Signup = ({ onSignup }) => {
       const response = await axios.post(url, formData);
       console.log('Signup successful');
 
+      sessionStorage.setItem('userInfo', JSON.stringify(response.data))
+
       // Handle successful signup (e.g., display success message)
       alert('Signup successful!');
 
