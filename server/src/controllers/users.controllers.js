@@ -196,7 +196,8 @@ const refreshAccessToken = asyncHandler( async (req, res) => {
     
         const options = {
             httpOnly: true,
-            secure: true
+            secure: true,
+            maxAge: 1000 * 60 * 60 * 24 * 30
         }
     
         const {accessToken, newrefreshToken} = await generateAccessAndRefreshTokens(user._id)
@@ -250,6 +251,25 @@ const getCurrentUser = asyncHandler(async(req, res) =>{
     .status(200)
     .json(200, user, "Current user fetched successfully")
 })
+
+const updateCurrentUser = asyncHandler(async (req, res) => {
+    const { email, appointmentID, date, doctor } = req.body;
+
+    try {
+        // Update user document to push new appointment
+        const user = await User.findOneAndUpdate(
+            { email },
+            { $push: { appointments: { appointmentID, date, doctor } } }, // Updated to use an object
+            { new: true, upsert: true }
+        );
+
+        // Respond with the updated user document
+        res.status(200).json({ success: true, user });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 
 const updateAccountDetails = asyncHandler(async(req, res) => {
     const {email} = req.body
@@ -442,5 +462,6 @@ export {
     medicineDetails,
     doctorDetails,
     getdoctorDetails,
-    messageApi
+    messageApi,
+    updateCurrentUser
 }

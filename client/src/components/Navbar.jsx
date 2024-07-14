@@ -9,35 +9,40 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
     // For demo purposes, just navigate to login page
     navigate('/login');
     if (onLogout) {
-      onLogout(); // Notify parent component of logout
+      onLogout(); 
     }
   };
 
   return (
-    <nav className="bg-gray-200 shadow-md px-4 py-2 flex items-center justify-between">
+    <nav className="fixed top-0 w-full bg-black shadow-md px-4 py-6 flex items-center justify-between z-50">
       <div className="flex items-center">
         <div className="mr-6">
-          <img src="../assets/logo.jpg" alt="Logo" className="h-8" />
-        </div>
-        <div className="space-x-6">
-          <Link to="/" className="text-gray-800 hover:text-gray-600 transition-colors duration-200">Home</Link>
-          <Link to="/schedules" className="text-gray-800 hover:text-gray-600 transition-colors duration-200">Schedules</Link>
-          <Link to="/doctor-appointment" className="text-gray-800 hover:text-gray-600 transition-colors duration-200">Doctor Appointment</Link>
+          <h1 className='text-white font-bold text-2xl'>Med-Ethereal</h1>
         </div>
       </div>
-      {isLoggedIn ? (
-        <div className="flex items-center">
-          {/* Replace with your profile icon or avatar */}
-          <div className="w-8 h-8 bg-gray-400 rounded-full"></div>
-          <button onClick={handleLogout} className="ml-4 bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md">
-            Logout
-          </button>
+      <div className="flex flex-1 justify-center">
+        <div className="flex">
+          <Link to="/" className="text-white text-xl hover:text-gray-300 hover:text-2xl transition-all duration-200 border-r border-gray-500 px-4">Home</Link>
+          <Link to="/schedules" className="text-white text-xl hover:text-gray-300 hover:text-2xl transition-all duration-200 border-r border-gray-500 px-4">Schedules</Link>
+          <Link to="/doctor-appointment" className="text-white text-xl hover:text-gray-300 hover:text-2xl transition-all duration-200 border-r border-gray-500 px-4">Doctor Appointment</Link>
+          <Link to="/hospital-connection" className="text-white text-xl hover:text-gray-300 hover:text-2xl transition-all duration-200 px-4">Hospital Connection</Link>
         </div>
-      ) : (
-        <Link to="/login" className="ml-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">
-          Login
-        </Link>
-      )}
+      </div>
+      <div>
+        {isLoggedIn ? (
+          <div className="flex items-center">
+            {/* Replace with your profile icon or avatar */}
+            <div className="w-8 h-8 bg-gray-400 rounded-full"></div>
+            <button onClick={handleLogout} className="ml-4 bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md">
+              Logout
+            </button>
+          </div>
+        ) : (
+          <Link to="/login" className="ml-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">
+            Login
+          </Link>
+        )}
+      </div>
     </nav>
   );
 }

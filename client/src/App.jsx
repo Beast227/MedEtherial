@@ -4,9 +4,8 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Schedules from './pages/Schedules';
 import DoctorAppointment from './pages/DoctorAppointment';
-import SignUp from './pages/Signup';
 import SignIn from './pages/Register';
-
+import HospitalConnection from './pages/HospitalConnection';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,22 +20,17 @@ const App = () => {
     localStorage.removeItem('refreshToken');
   };
 
-
-  const handleSignUp = () => {
-    setIsLoggedIn(false)
-  };
-
   return (
     <Router>
       <div>
         <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto max-w-full h-screen">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/schedules" element={<Schedules />} />
             <Route path="/doctor-appointment" element={<DoctorAppointment />} />
             <Route path="/login" element={<SignIn onLogin={handleLogin} />} />
-            <Route path="/signup" element={<SignUp onSignup={handleSignUp}/>} />
+            <Route path="/hospital-connection" element={<HospitalConnection />} /> {/* Add new route */}
           </Routes>
         </div>
       </div>

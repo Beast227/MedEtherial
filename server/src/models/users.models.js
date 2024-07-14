@@ -41,7 +41,12 @@ const userSchema = new Schema({
         },
         userType:{
             type: Boolean
-        }
+        },
+        appointments:[{
+            appointmentID: String,
+            date:String,
+            doctor:String
+        }]
 
     },
     {
