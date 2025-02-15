@@ -25,7 +25,7 @@ const Login = ({ onLogin }) => {
           password
         }
   
-        const response = await axios.post('http://localhost:8000/api/v1/users/login', formData);
+        const response = await axios.post('http://localhost:5173/api/v1/users/login', formData);
         console.log('Signin successful');
         const data = await response.data;
   

@@ -274,7 +274,7 @@ const DoctorAppointment = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100" style={{ backgroundImage: 'url(https://i.pinimg.com/564x/09/22/ee/0922eed0b8cc4d35753d28c677c7eded.jpg)' }}>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 pt-20" style={{ backgroundImage: 'url(https://i.pinimg.com/564x/09/22/ee/0922eed0b8cc4d35753d28c677c7eded.jpg)' }}>
       <div className="flex flex-col justify-between items-center h-full bg-black bg-opacity-50">
         <div className="text-center text-white py-8">
           <h1 className="text-3xl font-bold mb-4">MAKE AN <b>APPOINTMENT</b></h1>

@@ -13,7 +13,7 @@ const Schedules = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100" style={{ backgroundImage: "url('https://i.pinimg.com/564x/09/22/ee/0922eed0b8cc4d35753d28c677c7eded.jpg')" }}>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 pt-20" style={{ backgroundImage: "url('https://i.pinimg.com/564x/09/22/ee/0922eed0b8cc4d35753d28c677c7eded.jpg')" }}>
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Schedule an Appointment</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
